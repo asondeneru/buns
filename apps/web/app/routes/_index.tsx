@@ -8,14 +8,17 @@ export const meta: MetaFunction = () => {
 export const loader = async () => {
   // fetch data from remote
   const name = 'John';
-  return json({ name });
+  const test = process.env.TEST;
+  return json({ name, test });
 };
 
 export default function Index() {
-  const { name } = useLoaderData<typeof loader>();
+  const { name, test } = useLoaderData<typeof loader>();
   return (
     <>
-      <main className="p-24">Hello, {name}!</main>
+      <main className="p-24">
+        Hello, {name}! by {test}
+      </main>
     </>
   );
 }
