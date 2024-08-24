@@ -1,0 +1,10 @@
+{
+  "name": "buns",
+  "packageManager": "yarn@4.4.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "dependencies": {
+    "fs-extra": "^11.2.0"
+  }
+}
