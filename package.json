@@ -1,5 +1,6 @@
 {
   "name": "buns",
+  "private": true,
   "packageManager": "yarn@4.4.0",
   "workspaces": [
     "apps/*"
