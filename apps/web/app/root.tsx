@@ -10,11 +10,12 @@ export const ErrorBoundary = () => {
 };
 
 export async function loader() {
-  return json({ variable: process.env.SENTRY_DSN });
+  const sentryDsn = process.env.SENTRY_DSN || null;
+  return json({ sentryDsn });
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  const { variable } = useLoaderData<typeof loader>();
+  const { sentryDsn } = useLoaderData<typeof loader>();
   return (
     <html lang="ja">
       <head>
@@ -22,7 +23,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
-        <script dangerouslySetInnerHTML={{ __html: `window.SENTRY_DSN = '${variable}'` }}></script>
+        {sentryDsn && <script dangerouslySetInnerHTML={{ __html: `window.SENTRY_DSN = '${sentryDsn}'` }}></script>}
       </head>
       <body>
         {children}
