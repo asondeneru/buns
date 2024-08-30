@@ -9,12 +9,12 @@ export const ErrorBoundary = () => {
   return <>error</>;
 };
 
-export async function loader() {
+export const loader = async () => {
   const sentryDsn = process.env.SENTRY_DSN || null;
   return json({ sentryDsn });
-}
+};
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export const Layout = ({ children }: { children: React.ReactNode }) => {
   const { sentryDsn } = useLoaderData<typeof loader>();
   return (
     <html lang="ja">
@@ -32,7 +32,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </body>
     </html>
   );
-}
+};
 
 export default function App() {
   return <Outlet />;
