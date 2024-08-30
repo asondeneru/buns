@@ -3048,14 +3048,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"buns@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "buns@workspace:."
-  dependencies:
-    fs-extra: "npm:^11.2.0"
-  languageName: unknown
-  linkType: soft
-
 "bytes@npm:3.0.0":
   version: 3.0.0
   resolution: "bytes@npm:3.0.0"
@@ -8422,6 +8414,14 @@ __metadata:
   checksum: 10c0/984beb858da245c5e3a9027d6d87e67ad6443f1b46eab07685b861d9e49da5856693265c62a6f8262c36d11c9092713a96a9124f43e6de6698eb84d77118496a
   languageName: node
   linkType: hard
+
+"root-workspace-0b6124@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "root-workspace-0b6124@workspace:."
+  dependencies:
+    fs-extra: "npm:^11.2.0"
+  languageName: unknown
+  linkType: soft
 
 "run-parallel@npm:^1.1.9":
   version: 1.2.0

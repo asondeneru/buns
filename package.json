@@ -1,10 +1,12 @@
 {
-  "name": "buns",
   "private": true,
   "packageManager": "yarn@4.4.1",
   "workspaces": [
     "apps/*"
   ],
+  "scripts": {
+    "web": "yarn workspace web"
+  },
   "dependencies": {
     "fs-extra": "^11.2.0"
   }
