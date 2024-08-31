@@ -5,20 +5,20 @@ init:
 setup:
 	@doppler setup
 	@cd apps/web && doppler secrets download --no-file --format env > .env
-	@cd apps/web && yarn dlx prisma generate
+	@yarn web prisma generate
+
+env:
+	@cd apps/web && doppler secrets download --no-file --format env > .env
 
 generate:
-	@cd apps/web && doppler secrets download --no-file --format env > .env
-	@cd apps/web && yarn dlx prisma generate
+	@yarn web prisma generate
 
 migrate:
-	@cd apps/web && yarn dlx prisma migrate dev
+	@yarn web prisma migrate dev
 
 prisma:
-	@cd apps/web && doppler secrets download --no-file --format env > .env
-	@cd apps/web && yarn dlx prisma generate
-	@cd apps/web && yarn dlx prisma studio
+	@yarn web prisma generate
+	@yarn web prisma studio
 
 dev:
-	@cd apps/web && doppler secrets download --no-file --format env > .env
-	@yarn workspace web dev
+	@yarn web dev
