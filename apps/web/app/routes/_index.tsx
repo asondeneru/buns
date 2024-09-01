@@ -1,4 +1,4 @@
-import { json, type MetaFunction } from '@remix-run/node';
+import { type MetaFunction } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 
 export const meta: MetaFunction = () => {
@@ -9,7 +9,7 @@ export const loader = async () => {
   // fetch data from remote
   const name = 'John';
   const test = process.env.TEST;
-  return json({ name, test });
+  return { name, test };
 };
 
 export default function Index() {
